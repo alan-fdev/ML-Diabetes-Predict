@@ -5,8 +5,8 @@ from sklearn.metrics import f1_score, classification_report
 from sklearn.model_selection import train_test_split
 
 # === Load model dan scaler ===
-model = joblib.load('model.pkl')
-scaler = joblib.load('scaler.pkl')
+model = joblib.load('../model/model.pkl')
+scaler = joblib.load('../model/scaler.pkl')
 
 # === Load ulang data dan preprocessing ===
 data = pd.read_csv('../Datasheet/diabetes.csv')

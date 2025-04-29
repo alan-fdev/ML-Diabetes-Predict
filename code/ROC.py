@@ -5,8 +5,8 @@ from sklearn.metrics import roc_curve, auc
 from sklearn.model_selection import train_test_split
 
 # ===== Load model & scaler =====
-model = joblib.load('model.pkl')
-scaler = joblib.load('scaler.pkl')
+model = joblib.load('../model/model.pkl')
+scaler = joblib.load('../model/scaler.pkl')
 
 # ===== Load data & preprocessing =====
 data = pd.read_csv('../Datasheet/diabetes.csv')
