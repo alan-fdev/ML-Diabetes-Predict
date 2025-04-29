@@ -31,5 +31,9 @@ param_grid = {
 grid_search = GridSearchCV(logreg, param_grid, cv=5, scoring='accuracy')
 grid_search.fit(X_train, y_train)
 
+best_model = grid_search.best_estimator_
+joblib.dump(best_model, 'model.pkl')
+joblib.dump(scaler, 'scaler.pkl')
+
 print("Best parameters:", grid_search.best_params_)
 print("Best cross-validation accuracy:", grid_search.best_score_)
