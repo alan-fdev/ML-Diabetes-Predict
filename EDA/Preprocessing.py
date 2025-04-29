@@ -23,4 +23,11 @@ def remove_outliers(data):
     IQR = Q3 - Q1
     
     # Hanya ambil data di dalam batas 
-    
+    data = data[~((data < (Q1 - 1.5 * IQR)) | (data > (Q3 + 1.5 * IQR))).any(axis=1)]
+    return data
+
+def normalize_data(X):
+    """Normalisasi fitur menggunakan standard scaler"""
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(x)
+    return X_scaled, scaler
